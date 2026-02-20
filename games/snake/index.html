@@ -162,6 +162,9 @@
     function update() {
       if (isPaused) return;
       
+      // Don't move until player presses a key
+      if (dx === 0 && dy === 0) return;
+      
       // Move snake
       const head = { x: snake[0].x + dx, y: snake[0].y + dy };
       
